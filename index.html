@@ -1,265 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MacBuddy</title>
-  <link rel="stylesheet" href="styles.css" />
+<title>MacBuddy</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+<script defer src="app.js"></script>
 </head>
 <body>
-  <main class="page-shell">
-    <header class="brand-header">
-      <div class="brand-lockup">
-        <div class="brand-mark">mb</div>
-        <div>
-          <h1>MacBuddy</h1>
-          <p>Find your people at Mac</p>
-        </div>
-      </div>
-      <div class="project-pill">
-        <span class="status-dot"></span>
-        Group 14 · Innovate 2Z03 · Friendship-matching for first-years
-      </div>
-    </header>
-
-    <section class="showcase" aria-label="MacBuddy prototype screens">
-      <!-- Screen 1 -->
-      <article class="phone active-phone" id="screen-discover">
-        <div class="dynamic-island"></div>
-        <div class="statusbar">
-          <strong>9:41</strong>
-          <div class="status-icons">
-            <span class="signal">▮▮▮</span><span>⌁</span><span class="battery"></span>
-          </div>
-        </div>
-
-        <div class="phone-content discover-content">
-          <div class="appbar">
-            <div class="mini-brand">
-              <div class="mini-logo">mb</div>
-              <span>MacBuddy</span>
-            </div>
-            <button class="icon-circle" aria-label="Notifications">
-              <span>♢</span><span class="notif-dot"></span>
-            </button>
-          </div>
-
-          <p class="eyebrow">Good morning,</p>
-          <h2>Let's find your buddy, Lina</h2>
-
-          <div class="chips horizontal-scroll">
-            <button class="chip selected">For you</button>
-            <button class="chip">Gamer</button>
-            <button class="chip">Study buddy</button>
-            <button class="chip">Same res</button>
-          </div>
-
-          <div class="profile-card">
-            <div class="profile-top">
-              <div class="avatar coral">S<span class="online"></span></div>
-              <div class="profile-copy">
-                <h3>Sara <small>B.Comm. · '29</small></h3>
-                <p class="active-text">Active now</p>
-              </div>
-              <div class="match-ring">
-                <strong>98%</strong><span>MATCH</span>
-              </div>
-            </div>
-
-            <div class="tag-row">
-              <span class="tag pink">Same residence</span>
-              <span class="tag gold">Matcha lover</span>
-              <span class="tag green">Loves badminton</span>
-            </div>
-
-            <button class="primary connect-btn" data-name="Sara">Connect</button>
-          </div>
-
-          <div class="profile-card">
-            <div class="profile-top">
-              <div class="avatar blue">A</div>
-              <div class="profile-copy">
-                <h3>Ahmad <small>iSci. · '29</small></h3>
-                <p>Active 2h ago</p>
-              </div>
-              <div class="match-ring">
-                <strong>88%</strong><span>MATCH</span>
-              </div>
-            </div>
-
-            <div class="tag-row">
-              <span class="tag green">Gym goer</span>
-              <span class="tag gold">Commuter</span>
-            </div>
-
-            <button class="primary connect-btn" data-name="Ahmad">Connect</button>
-          </div>
-        </div>
-
-        <nav class="bottom-nav">
-          <button class="nav-item selected" data-target="screen-discover">⌂</button>
-          <button class="nav-item" data-target="screen-match">♡</button>
-          <button class="nav-item">□</button>
-          <button class="nav-item">♙</button>
-        </nav>
-        <div class="home-indicator"></div>
-      </article>
-
-      <!-- Screen 2 -->
-      <article class="phone match-screen" id="screen-match">
-        <div class="dynamic-island"></div>
-        <div class="statusbar dark-status">
-          <strong>9:41</strong>
-          <div class="status-icons"><span>▮▮▮</span><span>⌁</span><span class="battery dark"></span></div>
-        </div>
-
-        <div class="match-hero">
-          <p>IT'S A MATCH</p>
-          <h2>You're connected!</h2>
-          <div class="paired-avatars">
-            <div class="avatar-square coral">S</div>
-            <div class="heart-bubble">♥</div>
-            <div class="avatar-square blue">A</div>
-          </div>
-        </div>
-
-        <div class="phone-content match-content">
-          <p class="center-note">You and <strong id="match-name">Sara</strong> are 98% compatible</p>
-
-          <h3 class="section-title">Break the ice</h3>
-          <p class="section-subtitle">Pick a starter question — no awkward “hey” required.</p>
-
-          <div class="question-list">
-            <label class="question-card selected-card">
-              <span class="question-icon">☕</span>
-              <span>Matcha or coffee, where's the best spot on campus?</span>
-              <input type="radio" name="icebreaker" checked />
-              <span class="radio-ui"></span>
-            </label>
-            <label class="question-card">
-              <span class="question-icon">📚</span>
-              <span>What's your go-to study spot on campus?</span>
-              <input type="radio" name="icebreaker" />
-              <span class="radio-ui"></span>
-            </label>
-            <label class="question-card">
-              <span class="question-icon">✨</span>
-              <span>One club you've been meaning to try?</span>
-              <input type="radio" name="icebreaker" />
-              <span class="radio-ui"></span>
-            </label>
-          </div>
-
-          <button class="primary bottom-action" id="send-icebreaker">Send icebreaker</button>
-        </div>
-        <div class="home-indicator"></div>
-      </article>
-
-      <!-- Screen 3 -->
-      <article class="phone" id="screen-quest">
-        <div class="dynamic-island"></div>
-        <div class="statusbar">
-          <strong>9:41</strong>
-          <div class="status-icons"><span>▮▮▮</span><span>⌁</span><span class="battery"></span></div>
-        </div>
-
-        <div class="phone-content quest-content">
-          <button class="back-link" data-back="screen-match">‹ <span>Coffee side-quest</span></button>
-
-          <div class="quest-visual">
-            <div class="quest-icon coral-bg">☕</div>
-            <div class="arc-line"><span>✨</span></div>
-            <div class="quest-icon blue-bg">🧋</div>
-          </div>
-
-          <h2 class="center-title">You both want to grab a<br />coffee</h2>
-          <p class="center-note large">Here's a suggested time &amp; spot. Accept it, or float another idea.</p>
-
-          <div class="plan-card">
-            <div class="plan-main">
-              <div class="plan-icon">☕</div>
-              <div>
-                <h3>Coffee at PGCLL</h3>
-                <p>Peter George Living Centre</p>
-              </div>
-            </div>
-            <div class="plan-grid">
-              <div><span>DAY</span><strong>Tuesday</strong></div>
-              <div><span>TIME</span><strong>2:00 PM</strong></div>
-            </div>
-          </div>
-
-          <div class="quest-actions">
-            <button class="primary" id="accept-quest">Accept · Tuesday 2 PM</button>
-            <button class="secondary" id="suggest-time">Suggest another time</button>
-          </div>
-        </div>
-        <div class="home-indicator"></div>
-      </article>
-
-      <!-- Screen 4 -->
-      <article class="phone" id="screen-streak">
-        <div class="dynamic-island"></div>
-        <div class="statusbar">
-          <strong>9:41</strong>
-          <div class="status-icons"><span>▮▮▮</span><span>⌁</span><span class="battery"></span></div>
-        </div>
-
-        <div class="phone-content streak-content">
-          <span class="challenge-label">FRIENDSHIP CHALLENGE</span>
-          <h2>You &amp; Sara are building a streak</h2>
-
-          <div class="progress-card">
-            <div class="progress-row">
-              <span>Challenge progress</span><strong id="progress-percent">55%</strong>
-            </div>
-            <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
-            <p id="progress-caption">1 more quest to unlock your badge</p>
-          </div>
-
-          <h3 class="quests-heading">Quests to complete</h3>
-
-          <div class="task-list">
-            <label class="task done">
-              <span class="check-circle">✓</span>
-              <span>Get coffee together</span>
-              <span>☕</span>
-            </label>
-            <label class="task done">
-              <span class="check-circle">✓</span>
-              <span>Study together for 1 hour</span>
-              <span>📚</span>
-            </label>
-            <label class="task active-task" id="event-task">
-              <input type="checkbox" id="event-checkbox" />
-              <span class="empty-circle"></span>
-              <span>Attend a campus event</span>
-              <span>🎉</span>
-            </label>
-          </div>
-
-          <div class="reward-card" id="reward-card">
-            <div class="medal">🏅</div>
-            <div>
-              <span>REWARD</span>
-              <strong>Friendship Badge</strong>
-              <p>Unlocks at 100% · share to your profile</p>
-            </div>
-          </div>
-
-          <button class="primary bottom-action" id="find-event">Find a campus event</button>
-        </div>
-        <div class="home-indicator"></div>
-      </article>
-    </section>
-
-    <div class="demo-toolbar">
-      <button id="previous-screen">← Previous</button>
-      <span id="screen-label">Interactive prototype · Screen 1 of 4</span>
-      <button id="next-screen">Next →</button>
+<div class="desktop-bg">
+  <main class="app-frame ">
+    <div class="dynamic-island"></div>
+    <div class="statusbar">
+      <strong>9:41</strong>
+      <span>▮▮▮ ⌁ ▰</span>
     </div>
-  </main>
+    
+<section class="content scroll-page">
+  <header class="appbar">
+    <div class="mini-brand"><div class="mini-logo">mb</div><span>MacBuddy</span></div>
+    <button class="round-btn">♢<b></b></button>
+  </header>
+  <p class="eyebrow">Good morning,</p>
+  <h1>Let's find your buddy, Lina</h1>
+  <div class="live-strip"><span></span><strong>24 students active now</strong><div class="avatar-stack">S M N P</div></div>
+  <label class="search-box">⌕ <input id="user-search" placeholder="Search interests, program, or name"></label>
+  <div class="chips" id="filters">
+    <button class="chip selected" data-filter="all">For you</button>
+    <button class="chip" data-filter="gamer">Gamer</button>
+    <button class="chip" data-filter="study buddy">Study buddy</button>
+    <button class="chip" data-filter="residence">Same res</button>
+    <button class="chip" data-filter="gym">Gym</button>
+  </div>
+  <div id="user-list">
+    <article class="profile-card" data-tags="same residence matcha lover loves badminton sara b.comm.">
+      <div class="profile-top">
+        <div class="avatar coral">S<span class="online-dot"></span></div>
+        <div class="profile-copy">
+          <h3>Sara <small>B.Comm. · '29</small></h3>
+          <p>Active now</p>
+        </div>
+        <div class="match-ring"><strong>98%</strong><span>MATCH</span></div>
+      </div>
+      <div class="tag-row"><span class="tag">Same residence</span><span class="tag">Matcha lover</span><span class="tag">Loves badminton</span></div>
+      <a class="primary connect-link" href="match.html?name=Sara&initial=S&match=98&color=coral">Connect</a>
+    </article>
+    
+    <article class="profile-card" data-tags="gym goer commuter basketball ahmad isci">
+      <div class="profile-top">
+        <div class="avatar blue">A<span class="online-dot"></span></div>
+        <div class="profile-copy">
+          <h3>Ahmad <small>iSci · '29</small></h3>
+          <p>Active 2h ago</p>
+        </div>
+        <div class="match-ring"><strong>88%</strong><span>MATCH</span></div>
+      </div>
+      <div class="tag-row"><span class="tag">Gym goer</span><span class="tag">Commuter</span><span class="tag">Basketball</span></div>
+      <a class="primary connect-link" href="match.html?name=Ahmad&initial=A&match=88&color=blue">Connect</a>
+    </article>
+    
+    <article class="profile-card" data-tags="study buddy same residence coffee maya engineering">
+      <div class="profile-top">
+        <div class="avatar purple">M<span class="online-dot"></span></div>
+        <div class="profile-copy">
+          <h3>Maya <small>Engineering · '29</small></h3>
+          <p>Active now</p>
+        </div>
+        <div class="match-ring"><strong>94%</strong><span>MATCH</span></div>
+      </div>
+      <div class="tag-row"><span class="tag">Study buddy</span><span class="tag">Same residence</span><span class="tag">Coffee</span></div>
+      <a class="primary connect-link" href="match.html?name=Maya&initial=M&match=94&color=purple">Connect</a>
+    </article>
+    
+    <article class="profile-card" data-tags="gym partner music commuter noah life sci">
+      <div class="profile-top">
+        <div class="avatar green">N<span class="online-dot"></span></div>
+        <div class="profile-copy">
+          <h3>Noah <small>Life Sci · '29</small></h3>
+          <p>Active 12m ago</p>
+        </div>
+        <div class="match-ring"><strong>91%</strong><span>MATCH</span></div>
+      </div>
+      <div class="tag-row"><span class="tag">Gym partner</span><span class="tag">Music</span><span class="tag">Commuter</span></div>
+      <a class="primary connect-link" href="match.html?name=Noah&initial=N&match=91&color=green">Connect</a>
+    </article>
+    
+    <article class="profile-card" data-tags="gamer hackathons study buddy priya computer science">
+      <div class="profile-top">
+        <div class="avatar gold">P<span class="online-dot"></span></div>
+        <div class="profile-copy">
+          <h3>Priya <small>Computer Science · '29</small></h3>
+          <p>Active now</p>
+        </div>
+        <div class="match-ring"><strong>89%</strong><span>MATCH</span></div>
+      </div>
+      <div class="tag-row"><span class="tag">Gamer</span><span class="tag">Hackathons</span><span class="tag">Study buddy</span></div>
+      <a class="primary connect-link" href="match.html?name=Priya&initial=P&match=89&color=gold">Connect</a>
+    </article>
+    
+    <article class="profile-card" data-tags="campus events photography residence ethan social sciences">
+      <div class="profile-top">
+        <div class="avatar teal">E<span class="online-dot"></span></div>
+        <div class="profile-copy">
+          <h3>Ethan <small>Social Sciences · '29</small></h3>
+          <p>Active 1h ago</p>
+        </div>
+        <div class="match-ring"><strong>86%</strong><span>MATCH</span></div>
+      </div>
+      <div class="tag-row"><span class="tag">Campus events</span><span class="tag">Photography</span><span class="tag">Residence</span></div>
+      <a class="primary connect-link" href="match.html?name=Ethan&initial=E&match=86&color=teal">Connect</a>
+    </article>
+    
+    <article class="profile-card" data-tags="book club cafe hopping yoga layla arts & science">
+      <div class="profile-top">
+        <div class="avatar pink">L<span class="online-dot"></span></div>
+        <div class="profile-copy">
+          <h3>Layla <small>Arts & Science · '29</small></h3>
+          <p>Active now</p>
+        </div>
+        <div class="match-ring"><strong>84%</strong><span>MATCH</span></div>
+      </div>
+      <div class="tag-row"><span class="tag">Book club</span><span class="tag">Cafe hopping</span><span class="tag">Yoga</span></div>
+      <a class="primary connect-link" href="match.html?name=Layla&initial=L&match=84&color=pink">Connect</a>
+    </article>
+    
+    <article class="profile-card" data-tags="running gym partner residence daniel kinesiology">
+      <div class="profile-top">
+        <div class="avatar navy">D<span class="online-dot"></span></div>
+        <div class="profile-copy">
+          <h3>Daniel <small>Kinesiology · '29</small></h3>
+          <p>Active 25m ago</p>
+        </div>
+        <div class="match-ring"><strong>82%</strong><span>MATCH</span></div>
+      </div>
+      <div class="tag-row"><span class="tag">Running</span><span class="tag">Gym partner</span><span class="tag">Residence</span></div>
+      <a class="primary connect-link" href="match.html?name=Daniel&initial=D&match=82&color=navy">Connect</a>
+    </article>
+    </div>
+  <p class="empty-state" id="empty-state">No students match that search yet.</p>
+</section>
 
-  <script src="script.js"></script>
+    <nav class="bottom-nav">
+      <a class="nav-item selected" href="index.html">⌂<span>Discover</span></a>
+      <a class="nav-item " href="connections.html">♡<span>Connections</span></a>
+      <a class="nav-item " href="messages.html">▢<span>Messages</span></a>
+      <a class="nav-item " href="profile.html">♙<span>Profile</span></a>
+    </nav>
+    <div class="home-indicator"></div>
+  </main>
+</div>
 </body>
 </html>

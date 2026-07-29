@@ -1,13 +1,15 @@
-# MacBuddy Interactive Prototype
+# MacBuddy multipage prototype
 
-Open `index.html` in a browser.
+Open `index.html`.
 
-Features:
-- Four polished mobile screens matching the supplied MacBuddy mockup
-- Connect flow
-- Icebreaker selection
+This version uses separate HTML pages for:
+- Discovering people
+- Match and icebreaker
 - Coffee side-quest
-- Friendship streak and badge progression
-- Responsive mobile mode with screen navigation
+- Friendship streak
+- Connections
+- Messages
+- Campus events
+- User profile
 
-No build tools or installation are required.
+The app includes fake student users, active statuses, filtering, searching, messages, and clickable interactions.
