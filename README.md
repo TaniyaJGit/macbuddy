@@ -63,7 +63,7 @@ Our next design iteration would focus on strengthening profiles and testing whet
 
 MacBuddy was created by:
 
-- Taniya Jeevanayagam
+- Taniya 
 - Nour
 - Ajith
 - Andrew
